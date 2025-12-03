@@ -1,17 +1,13 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PROYECTO "CARRITO DE COMPRAS de platos de comidas"
+Este proyecto utiliza React.js. Se trata de una aplicación que consta de un Carrito de Compras. La interfaz de usuario consume una API REST para obtener y mostrar una lista de platos de comida disponibles en un stock o inventario. El proceso de renderizado en React se encarga de mostrar los datos e imágenes de la API, que son de tipo JSON, de manera eficiente en el navegador del usuario.
 
-Currently, two official plugins are available:
+Este proyecto consta de las siguientes pages: Header, NavBar, Inicio, Productos, DetalleProductos, Nosotros y Footer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Consumo de API:
+A la API la creé con Mockapi.io, pero a las imágenes las obtuve de otra API relacionada con comidas: https://www.themealdb.com/api/json/v1/1/categories.php Esta API contiene imágenes de distintos platos de comida, con diversas categorías.
 
-## React Compiler
+Con la ayuda de Mockapi.io, pude crear una API personalizada y editar los textos de forma alusiva a las imágenes obtenidas de la API externa. Asigné propiedades a cada comida: un "nombre", una "descripción", una "categoría", un "precio" y un "ID" (artículo), y pegué la URL de la imagen en la propiedad "avatar".
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# TiendaRotisera_react
+Este trabajo fue necesario porque la API de comidas original tiene todos los textos en inglés.
