@@ -10,4 +10,4 @@ A la API la creé con Mockapi.io, pero a las imágenes las obtuve de otra API re
 
 Con la ayuda de Mockapi.io, pude crear una API personalizada y editar los textos de forma alusiva a las imágenes obtenidas de la API externa. Asigné propiedades a cada comida: un "nombre", una "descripción", una "categoría", un "precio" y un "ID" (artículo), y pegué la URL de la imagen en la propiedad "avatar".
 
-Este trabajo fue necesario porque la API de comidas original tiene todos los textos en inglés.
+Este trabajo fue necesario porque la API de comidas original tiene todos los textos en inglés.# Rotiseria_React
