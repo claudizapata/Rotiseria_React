@@ -24,6 +24,7 @@
 .header_tit{
   align-items: center;
   padding: 1rem;
+  font-size: 4rem;
 }
 #cucharon{
   width: 12rem;
@@ -69,6 +70,11 @@ nav li.active{
 .nosotros_box{
   display: flex;
   justify-content: right;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.img_nosotros{
+  display: block;
 }
 .token-none{
   display: none;
@@ -97,11 +103,15 @@ nav li.active{
 }
 
 
-@keyframes cucharon {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .nosotros_box {
+    font-size: .8rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .img_nosotros{
+    display: none;
   }
-}
+  .header_tit{
+    font-size: 2rem;
+  }
+  }

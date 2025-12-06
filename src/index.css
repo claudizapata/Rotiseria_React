@@ -47,10 +47,12 @@ button{
 
   border-radius: solid 10px;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nosotros{
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .nosotros {
+    font-size: .8rem;
   }
   a:hover {
     color: #f06c1a;

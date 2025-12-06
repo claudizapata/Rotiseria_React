@@ -16,7 +16,7 @@ function Header() {
                         Login
                     </button> */}
                     
-                    <h1 className='header_tit' style={{fontWeight: "bold", color: "orange", fontSize:'4rem',
+                    <h1 className='header_tit' style={{fontWeight: "bold", color: "orange", 
                         /* backgroundColor: "#ccaa8dff", */ width: "100%"}}>Food <img id='cucharon' src="img/cucharones_mini.gif" alt="cucharones" /> Great</h1>
                    
                     
