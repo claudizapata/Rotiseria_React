@@ -24,12 +24,12 @@ function Navbar() {
 
   return (
     
-    <nav className='navbar bg-light navbar-light'>
+      <>
        
         
           <hr />
           <div className='navContainer'  >
-                <ul>
+                <div className='navbar'>
                   <li className='nav-item'><Link to="/" >Inicio</Link></li>              
                   <li className='nav-item'><Link to="/productos">Productos</Link></li>
                   <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li>
@@ -39,9 +39,9 @@ function Navbar() {
                       <Link to="/formulario-producto">Agregar Producto</Link>
                     </li>
                   )} */}
-                </ul>
-              
-                    <SeccionUsuario className='d-flex align-items-center gap3'>
+                </div>
+                  <div>
+                    <SeccionUsuario >
                       {usuario?.nombre != "admin" && ( <IconoCarrito to="/carrito" className="nav-link d-flex align-items-center">
                           <span id='carrito' className="me-1">Carrito</span>
                           <FaShoppingCart />
@@ -71,13 +71,13 @@ function Navbar() {
                             <NavLink id='iniciar-sesion-nav' className='bg-success' to="/iniciar-sesion">Iniciar Sesión</NavLink>
                           )}
                     </SeccionUsuario>
-                  
+                  </div>
              
           </div>
         <hr />
 
-    </nav>
     
+    </>
     
   )
 } export default Navbar;
