@@ -24,7 +24,7 @@ function Navbar() {
 
   return (
     
-    <nav className='navbar navbar-expand-sm bg-light navbar-light'>
+    <nav className='navbar bg-light navbar-light'>
        
         
           <hr />

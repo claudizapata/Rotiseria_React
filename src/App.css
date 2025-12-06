@@ -26,6 +26,9 @@
   padding: 1rem;
   font-size: 4rem;
 }
+.nav-item{
+  font-size: 1.1rem;
+}
 #cucharon{
   width: 12rem;
   height: 8rem;
@@ -114,4 +117,13 @@ nav li.active{
   .header_tit{
     font-size: 2rem;
   }
+  #cucharon{
+  width: 5rem;
+  height: 4rem;
+  border-radius: 80px 80px 80px 80px;
+}
+
+.nav-item{
+  font-size: .7rem;
+}
   }
