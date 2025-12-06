@@ -28,50 +28,50 @@ function Navbar() {
        
         
           <hr />
-          <div className='container justify align-items-center'  >
-            <ul>
-              <li className='nav-item'><Link to="/" >Inicio</Link></li>              
-              <li className='nav-item'><Link to="/productos">Productos</Link></li>
-              <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li>
+          <div className='navContainer'  >
+                <ul>
+                  <li className='nav-item'><Link to="/" >Inicio</Link></li>              
+                  <li className='nav-item'><Link to="/productos">Productos</Link></li>
+                  <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li>
 
-             {/*  {usuario?.nombre === "admin" && (
-                <li className='nav-item'>
-                  <Link to="/formulario-producto">Agregar Producto</Link>
-                </li>
-              )} */}
-              </ul>
-           
-                <SeccionUsuario className='d-flex align-items-center gap3'>
-                  {usuario?.nombre != "admin" && ( <IconoCarrito to="/carrito" className="nav-link d-flex align-items-center">
-                      <span className="me-1">Carrito</span>
-                      <FaShoppingCart />
-
-                    {totalItemsCarrito > 0 && (
-                    <ContadorCarrito>{totalItemsCarrito}</ContadorCarrito>)}
-
-
-                    </IconoCarrito>) }            
-                   
-                  
-                  
-                  
-                      {isAuthenticated ? (
-                        <ContenedorUsuario className='d-flex align-items-center gap3'>
-                          <Bienvenida>Hola, {usuario.nombre}</Bienvenida>
-                        
-                          {usuario.nombre === "admin" && (
-                            <NavLinkAdmin to="/dashboard">Dashboard</NavLinkAdmin>
-                          )}
-                        
-                          <BotonCerrarSesion onClick={manejarCerrarSesion}>
-                            Cerrar Sesión
-                          </BotonCerrarSesion>
-                        </ContenedorUsuario>
-                      ) : (
-                        <NavLink className='bg-success' to="/iniciar-sesion">Iniciar Sesión</NavLink>
-                      )}
-                </SeccionUsuario>
+                {/*  {usuario?.nombre === "admin" && (
+                    <li className='nav-item'>
+                      <Link to="/formulario-producto">Agregar Producto</Link>
+                    </li>
+                  )} */}
+                </ul>
               
+                    <SeccionUsuario className='d-flex align-items-center gap3'>
+                      {usuario?.nombre != "admin" && ( <IconoCarrito to="/carrito" className="nav-link d-flex align-items-center">
+                          <span id='carrito' className="me-1">Carrito</span>
+                          <FaShoppingCart />
+
+                        {totalItemsCarrito > 0 && (
+                        <ContadorCarrito>{totalItemsCarrito}</ContadorCarrito>)}
+
+
+                        </IconoCarrito>) }            
+                      
+                      
+                      
+                      
+                          {isAuthenticated ? (
+                            <ContenedorUsuario className='d-flex align-items-center gap3'>
+                              <Bienvenida>Hola, {usuario.nombre}</Bienvenida>
+                            
+                              {usuario.nombre === "admin" && (
+                                <NavLinkAdmin to="/dashboard">Dashboard</NavLinkAdmin>
+                              )}
+                            
+                              <BotonCerrarSesion onClick={manejarCerrarSesion}>
+                                Cerrar Sesión
+                              </BotonCerrarSesion>
+                            </ContenedorUsuario>
+                          ) : (
+                            <NavLink id='iniciar-sesion-nav' className='bg-success' to="/iniciar-sesion">Iniciar Sesión</NavLink>
+                          )}
+                    </SeccionUsuario>
+                  
              
           </div>
         <hr />
@@ -116,6 +116,7 @@ const NavLink = styled(Link)`
   &:hover {
     color: white !important;
     text-decoration: underline;
+    
   }
 `;
 
