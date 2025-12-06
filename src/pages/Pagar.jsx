@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../context/AuthContext';
 import { useCartContext } from '../context/CartContext';
+ 
 
 export default function Pagar() {
   const { usuario, cerrarSesion } = useAuthContext();
@@ -19,7 +20,7 @@ export default function Pagar() {
   return (
     <div>
       {/* Info del usuario */}
-      <div>
+      <div className="token-none">
         <h2>Hola {usuario.nombre}</h2>
         <p>Email: {usuario.email}</p>
        
@@ -40,7 +41,7 @@ export default function Pagar() {
 
       {/* Carrito */}
       <div>
-        <h2>Tu compra:</h2>
+        <h2 className="bg-light mt-3">Tu compra:</h2>
 
         {carrito.length > 0 ? (
           <>
@@ -60,7 +61,7 @@ export default function Pagar() {
                 </div>
               );
             })}
-            <h3>Total a pagar: ${Number(total).toFixed(3)}</h3>
+            <h3 className="mt-3">Total a pagar: ${Number(total).toFixed(3)}</h3>
           </>
 
         ) : (
@@ -68,7 +69,7 @@ export default function Pagar() {
         )}
       </div>
       
-      <div>
+      <div className="mb-4">
         {carrito.length > 0 && (
           <button onClick={comprar}>Confirmar y Pagar</button>
         )}

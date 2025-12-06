@@ -4,14 +4,22 @@
   font-weight: normal; */
   text-align: center;
 }
+.caja-inicio{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0.2rem;
+}
 .titulo_pages{
   background-color: #c6851eff;
   color: white;
-  
+  width: 100%;
+}
+
+.main-box{
+  width: 100%;
 }
 .header_box{
-  
-  margin-bottom: .2rem;
+  margin-bottom: 0;
 }
 .header_tit{
   align-items: center;
@@ -26,29 +34,58 @@ ul{
   list-style-type: none;
   justify-content: space-between;
 }
+nav{
+  align-items: center;
+}
 nav a{
   text-decoration: none;
   color: black;
 }
 nav li{
-  display: inline-block;
+  display: inline;
+  align-items: center;
+
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 2rem;
 }
 nav li:hover{
-  background-color: orange;  
   border-radius: 3px;
-  color: black;
+  color: rgb(0, 0, 0);
+}
+.carrito-listado{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#lista-productos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
 }
 nav li.active{
   background-color: goldenrod;
 }
-.main-box{
-  width: 100%;
-}
 .nosotros_box{
   display: flex;
   justify-content: right;
+}
+.token-none{
+  display: none;
+}
+#fila-carrito{
+  display: flex;
+  justify-content: center;
+  margin: .5rem .5rem;
+}
+.mas-menos{
+  border: none;
+  color: red;
+  font-weight: bold;
+}
+.botones-mas-menos{
+  margin-left: 2rem;
+
 }
 .footer_box{
   background-color: #d1d4d6ff;
@@ -58,6 +95,7 @@ nav li.active{
 .footer_tit{
   font-size: 1.2rem;
 }
+
 
 @keyframes cucharon {
   from {

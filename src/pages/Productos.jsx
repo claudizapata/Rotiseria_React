@@ -3,7 +3,8 @@ import CarritoCompras from "./Carrito";
 import { useCartContext } from "../context/CartContext";
 import { useAuthContext } from "../context/AuthContext";
 import { useProducts } from "../context/ProductsContext";
-
+/* import styled from 'styled-components';
+ */
 export default function Productos() {
   const { productos, cargando, error } = useProducts();
   const { agregarAlCarrito } = useCartContext();
@@ -25,7 +26,7 @@ export default function Productos() {
 
   return (
     <>
-      <ul id="lista-productos">
+      <div id="lista-productos" className="mt-3">
         {productos.map((producto) => (
           <ProductoItem
             key={producto.id}
@@ -36,27 +37,26 @@ export default function Productos() {
             onAgregarCarrito={() => agregarAlCarrito(producto)}
           />
         ))}
-      </ul>
-      <CarritoCompras />
+      </div>
+{/*  <CarritoCompras /> */}
     </>
   );
 }
 const ProductoItem = ({ producto, esAdmin, onEditar, onEliminar, onAgregarCarrito }) => (
-  <li>
-    <h2>{producto.nombre}</h2>
-    <p>Descripción: {producto.descripcion}</p>
+  <div className="col-12 col-md-6 col-lg-4 bg-light mx-4 m-1 p-2 card-body">
     <img src={producto.avatar} alt={producto.nombre} width="80%" />
-    <p><strong>Precio: ${producto.precio}</strong></p>
+    <p className="h4">{producto.nombre}</p>
+    <p>{producto.descripcion}</p>
+    
+    <p><strong>$ {producto.precio}</strong></p>
    
-    <Link to={`/productos/${producto.id}`} state={{producto}}>
-      <button>Más detalles</button>
-    </Link>
+    <Link to={`/productos/${producto.id}`} state={{producto}}><button>Más detalles</button></Link>
    
     <button onClick={onAgregarCarrito}>Comprar</button>
 
     {/* BOTONES ADMIN - Agregar contenedor */}
     {esAdmin && (
-      <div className="btn-admin-container">
+      <div>
         
         <button onClick={onEditar} className="btn-editar">
           Editar
@@ -68,6 +68,6 @@ const ProductoItem = ({ producto, esAdmin, onEditar, onEliminar, onAgregarCarrit
       </div>
      
     )}
-  </li>
+  </div>
 );
 /* https://www.themealdb.com/images/category/vegetarian.png */

@@ -12,27 +12,38 @@ export default function CarritoCompras() {
   };
 
   return (
-    <div>
+    <div className="carrito-listado">
       <hr />
-      <h2>Carrito de Compras</h2>
+      <h3>Carrito de Compras</h3>
+      <hr />
       {carrito.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
         <>
           {carrito.map((item) => (
-            <div key={item.id}>
-                {item.nombre} - ${Number(item.precio).toFixed(2)}
-                (Cantidad: {item.cantidad || 1})
-                <button onClick={() => quitarCantidad(item.id)}>-</button>
-                 <button onClick={() => agregarCantidad(item.id)}>+</button>
+            <div id="fila-carrito" key={item.id}>
+              
+                {item.nombre}   |   $ {Number(item.precio).toFixed(2)}
+
+                <div className="botones-mas-menos">
+                   <button className="mas-menos" onClick={() => quitarCantidad(item.id)}>-</button>
+                    {item.cantidad || 1}
+                  
+                    <button className="mas-menos" onClick={() => agregarCantidad(item.id)}>+</button>                  
+                </div>
+                
             </div>
           ))}
           <div>
             <hr />
-            Total: ${Number(total).toFixed(2)}
+            Total: $ {Number(total).toFixed(2)}
           </div>
-          <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-          <button onClick={irAPagar}>Pagar</button>
+          <div className="my-5">
+             <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+            <button onClick={irAPagar}>Pagar</button>
+
+          </div>
+         
         </>
       )}
     </div>

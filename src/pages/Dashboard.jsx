@@ -74,6 +74,7 @@ export default function Dashboard() {
         <button
           onClick={cerrarSesion}
           style={{
+            display: 'none',
             padding: '10px 20px',
             background: '#dc3545',
             color: 'white',

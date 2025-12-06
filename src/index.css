@@ -2,18 +2,32 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   
 }
-  
+nav{
+  align-items: center;
+}
 .navBar{
   list-style-type: none;
   border-top: solid black 2px;
   border-bottom: solid black 2px;
-}
+  align-items: center;
+}/* 
 li {
   font-weight: 500;
   color: #020420;
   
   list-style-type: none;
+} *//* 
+#tarjeta{
+ background-color: rgba(255, 253, 253, 0.879);
+  width: 100%;
+  padding: 1rem .8rem;
+  margin: .2rem;
+} */
+.carritoListado{
+  background-color: rgb(250, 248, 245);
 }
+  
+  /* 
 
 button {
   border-radius: 8px;
@@ -28,6 +42,10 @@ button {
 }
 button:hover {
   border-color: #d7440f;
+} */
+button{
+
+  border-radius: solid 10px;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -35,7 +53,7 @@ button:hover {
     background-color: #ffffff;
   }
   a:hover {
-    color: #a95d2e;
+    color: #f06c1a;
   }
   button {
     background-color: #f9f9f9;

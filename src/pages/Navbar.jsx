@@ -7,12 +7,12 @@ import { FaShoppingCart } from "react-icons/fa";/* Lo traigo de la pagina react-
 
 function Navbar() {
   const { usuario, isAuthenticated, cerrarSesion } = useAuthContext();
-  const { vaciarCarrito } = useCartContext();
+  const {carrito, vaciarCarrito } = useCartContext();
   const navigate = useNavigate();
-/* 
-  //Para computar el contador que aparece en el CARRITO
-  const totalItemsCarrito = IconoCarrito.reduce((total, item) => total + item.cantidad, 0); */
 
+  //Para computar el contador que aparece en el CARRITO
+  const totalItemsCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
+ 
   const manejarCerrarSesion = () => {
     navigate("/productos");
     // Tiempo 1'' para asegurar la navegación
@@ -24,40 +24,55 @@ function Navbar() {
 
   return (
     
-    <nav>
+    <nav className='navbar navbar-expand-sm bg-light navbar-light'>
        
         
           <hr />
-          <div >
-            <ul >
-              <li><Link to="/" >Inicio</Link></li>
-              <li><Link to="/servicios">Servicios</Link></li>
-              <li><Link to="/productos">Productos</Link></li>
-              {usuario?.nombre === "admin" && (
-                <li>
+          <div className='container justify align-items-center'  >
+            <ul>
+              <li className='nav-item'><Link to="/" >Inicio</Link></li>              
+              <li className='nav-item'><Link to="/productos">Productos</Link></li>
+              <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li>
+
+             {/*  {usuario?.nombre === "admin" && (
+                <li className='nav-item'>
                   <Link to="/formulario-producto">Agregar Producto</Link>
                 </li>
-              )}
+              )} */}
+              </ul>
            
+                <SeccionUsuario className='d-flex align-items-center gap3'>
+                  {usuario?.nombre != "admin" && ( <IconoCarrito to="/carrito" className="nav-link d-flex align-items-center">
+                      <span className="me-1">Carrito</span>
+                      <FaShoppingCart />
 
-              <li>
-                  {isAuthenticated ? (
-                    <div>
-                      <Bienvenida>Hola, {usuario.nombre}</Bienvenida>
-                    
-                      {usuario.nombre === "admin" && (
-                        <Link to="/dashboard">Dashboard</Link>
+                    {totalItemsCarrito > 0 && (
+                    <ContadorCarrito>{totalItemsCarrito}</ContadorCarrito>)}
+
+
+                    </IconoCarrito>) }            
+                   
+                  
+                  
+                  
+                      {isAuthenticated ? (
+                        <ContenedorUsuario className='d-flex align-items-center gap3'>
+                          <Bienvenida>Hola, {usuario.nombre}</Bienvenida>
+                        
+                          {usuario.nombre === "admin" && (
+                            <NavLinkAdmin to="/dashboard">Dashboard</NavLinkAdmin>
+                          )}
+                        
+                          <BotonCerrarSesion onClick={manejarCerrarSesion}>
+                            Cerrar Sesión
+                          </BotonCerrarSesion>
+                        </ContenedorUsuario>
+                      ) : (
+                        <NavLink className='bg-success' to="/iniciar-sesion">Iniciar Sesión</NavLink>
                       )}
-                    
-                      <button onClick={manejarCerrarSesion}>
-                        Cerrar Sesión
-                      </button>
-                    </div>
-                  ) : (
-                    <Link to="/iniciar-sesion">Iniciar Sesión</Link>
-                  )}
-              </li>
-             </ul>
+                </SeccionUsuario>
+              
+             
           </div>
         <hr />
 
@@ -118,7 +133,8 @@ const NavLinkAdmin = styled(Link)`
 `;
 
 const Bienvenida = styled.span`
-  color: white;
+  color: #dd6113ff;
+  font-weight: bold;
   font-size: 0.9rem;
   margin: 0;
   white-space: nowrap;
@@ -129,7 +145,7 @@ const Bienvenida = styled.span`
 `;
 
 const BotonCerrarSesion = styled.button`
-  background: transparent;
+  background: #dd6113ff;
   color: white;
   border: 1px solid white;
   border-radius: 4px;
@@ -155,7 +171,7 @@ const ContenedorCarrito = styled.div`
 `;
 
 const IconoCarrito = styled(Link)`
-  color: white !important;
+  color: green !important;
   text-decoration: none;
   padding: 0.5rem;
   display: flex;
@@ -165,7 +181,7 @@ const IconoCarrito = styled(Link)`
   gap: 5px;
  
   &:hover {
-    color: gold !important;
+    color: brown !important;
   }
 `;
 

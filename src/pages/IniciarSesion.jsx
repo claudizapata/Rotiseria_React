@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
+import styled from 'styled-components';
 
 export default function IniciarSesion() {
   const { iniciarSesion } = useAuthContext();
@@ -43,10 +44,10 @@ export default function IniciarSesion() {
   };
 
   return (
-    <div>
-      <h1>Inicia sesión para continuar</h1>
+    <PanelIniciarSesion className='container my-4 p-5'>
+      <h3 className="p-3">Inicia sesión para continuar</h3>
       <form onSubmit={manejarEnvio}>
-        <input
+        <input className="me-2"
           type="text"
           placeholder="Nombre completo"
           value={formulario.nombre}
@@ -55,7 +56,7 @@ export default function IniciarSesion() {
           }
           required
         />
-        <input
+        <input className="me-2"
           type="email"
           placeholder="Email"
           value={formulario.email}
@@ -64,11 +65,11 @@ export default function IniciarSesion() {
           }
           required
         />
-        <button type="submit">Iniciar Sesión</button>
+        <ButtonSesion type="submit">Iniciar Sesión</ButtonSesion>
         <strong> </strong>
-        <button type="button" onClick={() => navigate("/productos")}>
+        <ButtonSesion type="button" onClick={() => navigate("/productos")}>
           Cancelar
-        </button>
+        </ButtonSesion>
       </form>
       {/* <p style={{ marginTop: "20px", fontSize: "12px", color: "#666" }}>
         <strong>Credenciales de prueba para Dashboard:</strong>
@@ -77,6 +78,21 @@ export default function IniciarSesion() {
         <br />
         Email: 1234@admin
       </p> */}
-    </div>
+    </PanelIniciarSesion>
   );
 }
+
+const PanelIniciarSesion = styled.div`
+  background: #e8ded5ff;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+ `
+
+const ButtonSesion = styled.button`
+  padding: .5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+
+`
+ 

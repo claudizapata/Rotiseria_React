@@ -20,6 +20,7 @@ import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css'; /* no colocar la versión de BOOTSTRAP */
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import CarritoCompras from "./pages/Carrito";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/productos/:id" element={<ProductoDetalle />} />
               <Route path="/productos/:categoria/:id" element={<ProductoDetalle />} />
               <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+              <Route path="/carrito" element= {<CarritoCompras/>}/>
              
               {/* RUTA PROTEGIDA - para Usuarios */}
               <Route path="/pagar" element={<RutaProtegida><Pagar /></RutaProtegida>}/>
