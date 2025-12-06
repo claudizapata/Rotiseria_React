@@ -129,6 +129,14 @@ nav li.active{
   .header_tit{
     font-size: 2rem;
   }
+  
+.navContainer{
+  
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
   #cucharon{
   width: 5rem;
   height: 4rem;
