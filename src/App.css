@@ -121,11 +121,13 @@ nav li.active{
   display: flex;
   justify-content: center;
   margin: .5rem .5rem;
+  font-size: 1.1rem;
 }
 .mas-menos{
   border: none;
   color: red;
   font-weight: bold;
+
 }
 .botones-mas-menos{
   margin-left: 2rem;
@@ -185,4 +187,21 @@ nav li.active{
   
   font-size: .9rem;
 }
+
+#fila-carrito{
+  display: flex;
+  justify-content: center;
+  margin: .5rem .5rem;
+  font-size: .8rem;
+}
+
+.footer_box{
+  background-color: #d1d4d6ff;
+  width: 100%;
+  font-size: .7rem;
+}
+.footer_tit{
+  font-size: .9rem;
+}
+
   }
