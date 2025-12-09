@@ -4,12 +4,6 @@
 }
 nav{
   align-items: center;
-}
-.navBar{
-  list-style-type: none;
-  border-top: solid black 2px;
-  border-bottom: solid black 2px;
-  align-items: center;
 }/* 
 li {
   font-weight: 500;
@@ -23,9 +17,6 @@ li {
   padding: 1rem .8rem;
   margin: .2rem;
 } */
-.carritoListado{
-  background-color: rgb(250, 248, 245);
-}
   
   /* 
 

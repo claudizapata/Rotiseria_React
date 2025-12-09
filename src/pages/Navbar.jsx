@@ -28,19 +28,24 @@ function Navbar() {
        
         
           <hr />
-          <div className='navContainer'  >
+          <nav className='navContainer navBar'  >
                 <div className='navbar'>
-                  <li className='nav-item'><Link to="/" >Inicio</Link></li>              
-                  <li className='nav-item'><Link to="/productos">Productos</Link></li>
-                  <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li>
+                     {/*  <li className='nav-item'><Link to="/" >Inicio</Link></li>              
+                      <li className='nav-item'><Link to="/productos">Productos</Link></li>
+                      <li className='nav-item'><Link to="/nosotros">Nosotros</Link></li> */}
+                      <NavLink className='nav-item'  to="/" >Inicio</NavLink>           
+                      <NavLink className='nav-item' to="/productos">Productos</NavLink>
+                      <NavLink className='nav-item' to="/nosotros">Nosotros</NavLink>
 
-                {/*  {usuario?.nombre === "admin" && (
-                    <li className='nav-item'>
-                      <Link to="/formulario-producto">Agregar Producto</Link>
-                    </li>
-                  )} */}
+
+                    {/*  {usuario?.nombre === "admin" && (
+                        <li className='nav-item'>
+                          <Link to="/formulario-producto">Agregar Producto</Link>
+                        </li>
+                      )} */}
                 </div>
-                  <div>
+                
+                  
                     <SeccionUsuario >
                       {usuario?.nombre != "admin" && ( <IconoCarrito to="/carrito" className="nav-link d-flex align-items-center">
                           <span id='carrito' className="me-1">Carrito</span>
@@ -48,11 +53,7 @@ function Navbar() {
 
                         {totalItemsCarrito > 0 && (
                         <ContadorCarrito>{totalItemsCarrito}</ContadorCarrito>)}
-
-
                         </IconoCarrito>) }            
-                      
-                      
                       
                       
                           {isAuthenticated ? (
@@ -62,27 +63,25 @@ function Navbar() {
                               {usuario.nombre === "admin" && (
                                 <NavLinkAdmin to="/dashboard">Dashboard</NavLinkAdmin>
                               )}
-                            
+
                               <BotonCerrarSesion onClick={manejarCerrarSesion}>
                                 Cerrar Sesión
                               </BotonCerrarSesion>
                             </ContenedorUsuario>
                           ) : (
-                            <NavLink id='iniciar-sesion-nav' className='bg-success' to="/iniciar-sesion">Iniciar Sesión</NavLink>
+                            <NavLinkSesion id='iniciar-sesion-nav' to="/iniciar-sesion">Iniciar Sesión</NavLinkSesion>
                           )}
                     </SeccionUsuario>
-                  </div>
-             
-          </div>
+                  
+          </nav>
         <hr />
-
-    
     </>
-    
   )
 } export default Navbar;
 
 // Styled Components actualizados
+
+
 const NavbarContainer = styled.nav`
   background-color: #556B2F !important;
   padding: 0.5rem 1rem;
@@ -109,14 +108,28 @@ const Logo = styled(Link)`
 
 // NavLink normal (para usuarios)
 const NavLink = styled(Link)`
-  color: white !important;
+  color: #ef7008ff !important;
+  font-weight: bold;
   text-decoration: none;
   padding: 0.5rem 1rem;
  
   &:hover {
     color: white !important;
-    text-decoration: underline;
-    
+     
+    background-color: #c6851eff !important;
+    padding: .5rem 1rem;
+      
+  }
+`;
+const NavLinkSesion = styled(Link)`
+  color: white !important;
+  background: green;
+  padding: 1rem;
+  text-decoration: none;
+
+  &:hover {
+  color: yellow !important;
+  text-decoration: underline;
   }
 `;
 
@@ -204,13 +217,13 @@ const ContadorCarrito = styled.span`
 
 const SeccionUsuario = styled.div`
   display: flex;
-  gap: 1rem;
+ /*  gap: 1rem; */
   align-items: center;
 
   @media (max-width: 991.98px) {
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     width: 100%;
   }
 `;
@@ -218,6 +231,7 @@ const SeccionUsuario = styled.div`
 const ContenedorUsuario = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 
   @media (max-width: 991.98px) {

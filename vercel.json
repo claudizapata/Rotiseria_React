@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {
+            "scr": "/[^.]+",
+            "dest": "/index.html",
+            "status": 200
+        }
+    ]
+}
