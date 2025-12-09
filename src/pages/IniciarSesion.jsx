@@ -44,8 +44,8 @@ export default function IniciarSesion() {
   };
 
   return (
-    <PanelIniciarSesion className='container my-4 p-5'>
-      <h3 className="p-3">Inicia sesión para continuar</h3>
+    <PanelIniciarSesion className='container my-4 p-5' id="panel-sesion">
+      <h3 className=" p-3" id="titulo-sesion">Inicia sesión para continuar</h3>
       <form onSubmit={manejarEnvio}>
         <input className="me-2"
           type="text"
@@ -83,10 +83,10 @@ export default function IniciarSesion() {
 }
 
 const PanelIniciarSesion = styled.div`
-  background: #e8ded5ff;
+  background: #fbf3ebff;
   color: black;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 7px;
  `
 
 const ButtonSesion = styled.button`

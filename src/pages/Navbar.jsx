@@ -147,7 +147,7 @@ const NavLinkAdmin = styled(Link)`
 `;
 
 const Bienvenida = styled.span`
-  color: #dd6113ff;
+  color: red !important;
   font-weight: bold;
   font-size: 0.9rem;
   margin: 0;
