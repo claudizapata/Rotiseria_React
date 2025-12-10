@@ -3,12 +3,7 @@
   /* font-family:Arial, Helvetica, sans-serif;
   font-weight: normal; */
   text-align: center;
-}/* 
-.caja-inicio{
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0.2rem;
-} */
+}
 .titulo_pages{
   background-color: #c6851eff;
   color: white;
@@ -22,6 +17,10 @@
 }
 .header_box{
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 .header_tit{
   align-items: center;
@@ -29,9 +28,12 @@
   font-size: 4rem;
 }
 #cucharon{
-  width: 12rem;
-  height: 8rem;
-  border-radius: 80px 80px 80px 80px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 40px 40px 80px 80px;
+}
+#cucharon2{
+  display: none;
 }
 .navContainer{
   display: flex;
@@ -39,7 +41,7 @@
   justify-content: space-between;
   width: 100%;
   text-decoration: none;
-  padding: .2rem 1rem;
+  padding: 0 1rem;
   
 }
 .navbar {
@@ -69,6 +71,11 @@
 #iniciar-sesion-nav:hover{
   color: white;
 } */
+
+.inicio_box{
+  width: 100%;
+  padding-bottom: 1rem;
+}
 ul{
   list-style-type: none;
   justify-content: space-between;
@@ -95,6 +102,10 @@ nav li:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+#img_inicio{
+  max-width: 100%;
+  height: auto;
 }
 #lista-productos{
   display: flex;
@@ -156,6 +167,14 @@ nav li.active{
   .img_nosotros{
     display: none;
   }
+  
+.header_box{
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+}
   .header_tit{
     font-size: 2rem;
   }
@@ -166,12 +185,21 @@ nav li.active{
  justify-content: center;
  padding: .8rem;
 }
+
+#cucharon{
+  display: none;
+}
+#cucharon2{
+  display: block;
+  border-radius: 20px 20px 80px 80px;
+}
+/* 
   #cucharon{
   width: 5rem;
   height: 4rem;
   border-radius: 80px 80px 80px 80px;
 }
-
+ */
 .navbar .nav-item{
   font-size: .9rem;
   list-style-type: none;

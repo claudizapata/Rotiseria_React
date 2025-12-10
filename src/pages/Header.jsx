@@ -16,8 +16,10 @@ function Header() {
                         Login
                     </button> */}
                     
-                    <h1 className='header_tit' style={{fontWeight: "bold", color: "orange", 
-                        /* backgroundColor: "#ccaa8dff", */ width: "100%"}}>Food <img id='cucharon' src="img/cucharones_mini.gif" alt="cucharones" /> Great</h1>
+                    <h1 className='header_tit' style={{fontWeight: "bold", color: "orange"}}>Great</h1>
+                    <img id='cucharon' src="img/cucharones_mini.jpg" alt="cucharones" />
+                    <img id='cucharon2' src="img/cucharones_mini..jpg" alt="cucharones" />
+                    <h1 className='header_tit' style={{fontWeight: "bold", color: "orange"}}>Food</h1>
                    
                     
 
