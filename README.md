@@ -8,7 +8,7 @@ Este proyecto consta de las siguientes pages: Header, NavBar, Inicio, Productos,
 # Consumo de API:
 A la API la creé con Mockapi.io, pero a las imágenes las obtuve de otra API relacionada con comidas: https://www.themealdb.com/api/json/v1/1/categories.php Esta API contiene imágenes de distintos platos de comida, con diversas categorías.
 
-Con la ayuda de Mockapi.io, pude crear una API personalizada y editar los textos de forma alusiva a las imágenes obtenidas de la API externa. Asigné propiedades a cada comida: un "nombre", una "descripción", una "categoría", un "precio" y un "ID" (artículo), y pegué la URL de la imagen en la propiedad "avatar".
+Con Mockapi.io, creé una API personalizada y edité los textos de forma alusiva a las imágenes obtenidas de la API externa. Consideré utilizar Mockapi.io como una manera más rápida de construir una API para probar el Frontend y el acceso a los datos. Asigné propiedades a cada comida: un "nombre", una "descripción", una "categoría", un "precio" y un "ID" (artículo), y pegué la URL de la imagen en la propiedad "avatar".
 
 Este trabajo fue necesario porque la API de comidas original tiene todos los textos en inglés.# Rotiseria_React
 
