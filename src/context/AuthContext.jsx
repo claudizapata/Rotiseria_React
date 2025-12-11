@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
     if (token) {
       const username = token.replace("fake-token-", "");
       setUsuario({
-        nombre: username,
+        nombre: username.toUpperCase(),
         email: emailGuardado || "",
       });
     }
