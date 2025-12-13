@@ -1,5 +1,7 @@
-
+import { toast} from "react-toastify";
 import React, { createContext, useContext, useState } from "react";
+
+
 
 // Crear el contexto
 export const CartContext = createContext();
@@ -10,21 +12,26 @@ export function CartProvider({ children }) {
   const [carrito, setCarrito] = useState([]);
 
   // Funciones para el carrito
-const agregarAlCarrito = (producto) => {
+  const agregarAlCarrito = (producto) => {
+    
     setCarrito(prevCarrito => {
       const productoExistente = prevCarrito.find(item => item.id === producto.id);
      
       if (productoExistente) {
+        
         return prevCarrito.map(item =>
           item.id === producto.id
             ? { ...item, cantidad: (item.cantidad || 1) + 1 }
             : item
         );
       } else {
+        
         return [...prevCarrito, { ...producto, cantidad: 1 }];
       }
-    });
-    alert(`Producto ${producto.nombre} agregado.`);
+    });/* 
+    alert(`Producto ${producto.nombre} agregado.`); */
+    toast(`Producto ${producto.nombre} se agrega al carrito`);    
+   
   };
 
   const vaciarCarrito = () => {

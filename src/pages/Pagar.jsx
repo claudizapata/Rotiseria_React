@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../context/AuthContext';
 import { useCartContext } from '../context/CartContext';
+import { toast } from "react-toastify";
  
 
 export default function Pagar() {
@@ -12,7 +13,8 @@ export default function Pagar() {
 
   // Función para finalizar compra
   const comprar = () => {
-    alert("¡Compra realizada con éxito!");
+    /* alert("¡Compra realizada con éxito!"); */
+    toast("¡Compra realizada con éxito!");
     vaciarCarrito(); // Limpiar carrito después de comprar
     navigate("/productos");
   };

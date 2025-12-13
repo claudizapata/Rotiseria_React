@@ -16,11 +16,17 @@ import { ProductsProvider } from "./context/ProductsContext";
 import Dashboard from "./pages/Dashboard";
 import FormularioProducto from './components/FormularioProducto';
 import EliminarProducto from './components/EliminarProducto';
+import CarritoCompras from "./pages/Carrito";
 import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css'; /* no colocar la versión de BOOTSTRAP */
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import CarritoCompras from "./pages/Carrito";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
+
 
 function App() {
   return (
@@ -62,6 +68,14 @@ function App() {
         </CartProvider>
       </AuthProvider>
       <Footer/>
+      <ToastContainer 
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick
+      draggable
+      pauseOnHover
+    />
     </div>
   );
 } export default App;
